@@ -8,6 +8,7 @@ function EditAvatarPopup({isOpen, onClose}) {
       title='Обновить аватар'
       isOpen={isOpen}
       onClose={onClose}
+      textButton='Сохранить'
       >
       <input className="popup__input popup__input_content_avatar" id="avatar-link-input" type="url" name="avatar" required placeholder="Ссылка на картинку" />
       <span className="popup__span-input-error avatar-link-input-error" id="error-avatar-link-input"></span>

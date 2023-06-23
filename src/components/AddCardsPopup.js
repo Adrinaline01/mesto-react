@@ -7,6 +7,7 @@ function AddCardsPopup({isOpen, onClose}) {
     title='Новое место'
     isOpen={isOpen}
     onClose={onClose}
+    textButton='Создать'
     >
       <input className="popup__input popup__input_content_appellation" id="appellation-input" type="text" name="name" required placeholder="Название" minLength="2" maxLength="30" />
       <span className="popup__span-input-error appellation-input-error" id="error-appellation-input"></span>

@@ -8,6 +8,7 @@ function EditProfilePopup({isOpen, onClose}) {
       title='Редактировать профиль'
       isOpen={isOpen}
       onClose={onClose}
+      textButton='Сохранить'
       >
       <input className="popup__input popup__input_content_name" id="name-input" type="text" name="name" placeholder="Введите имя" required minLength="2" maxLength="40" />
       <span className="popup__span-input-error name-input-error" id="error-name-input"></span>

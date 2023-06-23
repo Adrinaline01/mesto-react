@@ -10,16 +10,10 @@ function Main({ onEditProfile, onAddCards, onEditAvatar, onCardClick }) {
 
   useEffect(() => {
     Promise.all([api.initialUsers(), api.initCardsFromServer()])
-      .then(([userData, initialCards]) => {
+      .then(([userData]) => {
         setUserName(userData.name);
         setUserDescription(userData.about);
         setUserAvatar(userData.avatar);
-        setCards(initialCards.map((data) => ({
-          likeId: data.likes,
-          name: data.name,
-          link: data.link,
-          cardId: data._id,
-        })));
       })
       .catch((err) => {
         console.log(`Ошибка: ${err}`);
@@ -27,6 +21,13 @@ function Main({ onEditProfile, onAddCards, onEditAvatar, onCardClick }) {
 
 
   }, []);
+
+  useEffect(() => {
+    api
+      .initCardsFromServer()
+      .then((cards) => setCards(cards))
+      .catch((err) => console.log(`Ошибка ${err}`))
+  }, [])
 
   return (
     <main className="content">
@@ -55,6 +56,7 @@ function Main({ onEditProfile, onAddCards, onEditAvatar, onCardClick }) {
           {cards.map((card) => (
             <Card 
               key={card.cardId}
+              card={card}
               likes={card.likeId}
               name={card.name}
               link={card.link}
