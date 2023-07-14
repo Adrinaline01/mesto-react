@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import api from '../utils/Api';
+import React from 'react';
 import Card from './Card';
 import CurrentUserContext from '../contexts/CurrentUserContext';
+import imagePen from '../images/edit-avatar-pen.svg';
 
 function Main({ onEditProfile, onAddCards, onEditAvatar, onCardClick, onCardLike, cards, onCardDelete }) {
   
@@ -17,7 +17,7 @@ function Main({ onEditProfile, onAddCards, onEditAvatar, onCardClick, onCardLike
             alt="Фотография знаменитого учёного Жака-Ив Кусто"
           />
           <button className="profile__avatar-edit" onClick={onEditAvatar} type="button">
-            <img className="profile__avatar-pen" src="<%=require('./images/edit-avatar-pen.svg')%>" alt="Кнопка" />
+            <img className="profile__avatar-pen" src={imagePen} alt="Кнопка" />
           </button>
           <div className="profile__editable-information">
             <div className="profile__container">

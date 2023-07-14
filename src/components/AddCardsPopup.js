@@ -32,10 +32,11 @@ function AddCardsPopup({isOpen, onClose, onAddCard}) {
     onClose={onClose}
     textButton='Создать'
     onSubmit={handleSubmit}
+    nameProfile='cards'
     >
-      <input className="popup__input popup__input_content_appellation" id="appellation-input" onChange={handleAddCardName} type="text" name="name" required placeholder="Название" minLength="2" maxLength="30" />
+      <input className="popup__input popup__input_content_appellation" id="appellation-input" onChange={handleAddCardName} value={nameCard} type="text" name="name" required placeholder="Название" minLength="2" maxLength="30" />
       <span className="popup__span-input-error appellation-input-error" id="error-appellation-input"></span>
-      <input className="popup__input popup__input_content_link" id="link-input" onChange={handleAddCardLink} type="url" name="link" required placeholder="Ссылка на картинку" />
+      <input className="popup__input popup__input_content_link" id="link-input" onChange={handleAddCardLink} value={link} type="url" name="link" required placeholder="Ссылка на картинку" />
       <span className="popup__span-input-error link-input-error" id="error-link-input"></span>
     </PopupWithForm>
   )
