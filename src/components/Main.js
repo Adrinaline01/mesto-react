@@ -14,7 +14,6 @@ function Main({ onEditProfile, onAddCards, onEditAvatar, onCardClick, onCardLike
           <img
             className="profile__avatar"
             src={currentUser.avatar}
-            alt="Фотография знаменитого учёного Жака-Ив Кусто"
           />
           <button className="profile__avatar-edit" onClick={onEditAvatar} type="button">
             <img className="profile__avatar-pen" src={imagePen} alt="Кнопка" />
@@ -33,7 +32,7 @@ function Main({ onEditProfile, onAddCards, onEditAvatar, onCardClick, onCardLike
         <ul className="cards__list">
           {cards.map((card) => (
             <Card 
-              key={card.cardId}
+              key={card._id}
               card={card}
               likes={card.likeId}
               name={card.name}
